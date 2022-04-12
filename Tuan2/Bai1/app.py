@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 cnxn = pyodbc.connect( Trusted_Connection='yes',
                       Driver='{ODBC Driver 17 for SQL Server}',
-                      Server='HNILXUV\SQLEXPRESS',
+                      Server='DESKTOP-09AHFD3',
                       Database='Bank')
 cursor = cnxn.cursor()
 

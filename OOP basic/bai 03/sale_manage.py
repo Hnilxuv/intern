@@ -21,7 +21,7 @@ class Customer:
 
 
 # cac ham quan li san pham
-class product_manage:
+class ProductManage:
     list_product = []
 
     def generate_id(self):
@@ -78,7 +78,7 @@ def generate_uuid():
 
 
 # cac ham quan ly khach hang
-class customer_manage:
+class CustomerManage:
     list_customer = []
 
     def input_customer(self):
@@ -115,7 +115,7 @@ class customer_manage:
 
 
 # lop doi tuong hoa don
-class bill:
+class Bill:
 
     def __init__(self, bill_id, time, customer_id, customer_name):
         self.id = bill_id
@@ -125,7 +125,7 @@ class bill:
 
 
 # lop doi tuong chi tiet hoa don
-class billdetails:
+class BillDetails:
 
     def __init__(self, bill_id, product_id, quantity):
         self.bill_id = bill_id
@@ -133,7 +133,7 @@ class billdetails:
         self.quantity = quantity
 
 
-class bill_manage:
+class BillManage:
     list_bill = []
 
     def generate_id(self):
@@ -154,7 +154,7 @@ class bill_manage:
         time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         customer_id = input("Enter customer id: ")
         customer_name = input("Enter customer name: ")
-        b = bill(bill_id, time, customer_id, customer_name)
+        b = Bill(bill_id, time, customer_id, customer_name)
         self.list_bill.append(b)
 
     def show_bill_list(self, list_bill):
@@ -185,14 +185,14 @@ class bill_manage:
         return self.list_bill
 
 
-class bill_details_manage:
+class BillDetailManage:
     list_bill_details = []
 
     def input_bill_details(self, id):
         bill_id = id
         customer_id = input("Enter ProductID: ")
         quantity = int(input("Enter Product Quantity: "))
-        billdt = billdetails(bill_id, customer_id, quantity)
+        billdt = BillDetails(bill_id, customer_id, quantity)
         self.list_bill_details.append(billdt)
 
     def bill_detail_amount(self):

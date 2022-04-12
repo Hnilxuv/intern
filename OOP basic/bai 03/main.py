@@ -1,9 +1,9 @@
-from sale_manage import bill, product_manage, customer_manage, bill_manage, bill_details_manage
+from sale_manage import Bill, ProductManage, CustomerManage, BillManage, BillDetailManage
 
-list_product = product_manage()
-list_customer = customer_manage()
-list_bill = bill_manage()
-list_bill_details = bill_details_manage()
+list_product = ProductManage()
+list_customer = CustomerManage()
+list_bill = BillManage()
+list_bill_details = BillDetailManage()
 
 while (True):
     print("\nSale Management")
@@ -38,7 +38,7 @@ while (True):
         list_bill.input_bill()
         list_product.show_product_list(list_product.get_product_list())
         id = int(input("Enter bill id: "))
-        c: bill = list_bill.find_by_billid(id)
+        c: Bill = list_bill.find_by_billid(id)
         if(c!=None):
             print("1.Add Bill Detail.   ")
             print("2.Back               ")
